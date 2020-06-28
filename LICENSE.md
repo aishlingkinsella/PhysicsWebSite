@@ -1,3 +1,18 @@
+Website Content:
+
+
+The material developed for the website is licensed under a Creative Commons
+Attribution-NonCommercial-ShareAlike 4.0 International license:
+https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+Copyright (c) 2010 - present John Quinn
+
+
+
+-----------------------------------------------------------------------------
+
+Academic Theme: https://themes.gohugo.io/academic/
+
 MIT License
 
 Copyright (c) 2016-present George Cushen

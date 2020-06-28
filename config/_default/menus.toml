@@ -14,19 +14,23 @@
   weight = 20
 
 [[main]]
-  name = "Projects"
-  url = "#projects"
-  weight = 30
-
-[[main]]
-  name = "Publications"
-  url = "#featured"
-  weight = 40
-
-[[main]]
   name = "Contact"
   url = "#contact"
-  weight = 60
+  weight = 30
+
+
+[[main]]
+  name = "Python"
+  url = "/courses/python/"
+  weight = 40
+
+
+[[main]]
+  name = "Data Analysis"
+  url = "/courses/data_analysis/"
+  weight = 50
+
+
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
@@ -34,3 +38,55 @@
 #    name = "CV"
 #    url = "files/cv.pdf"
 #    weight = 70
+
+
+## Data Analysis menus
+
+
+[[data_analysis]]  # name must match folder name on /courses/
+  name = "Introduction" 
+  weight = 20
+  identifier = "da_intro"
+
+
+
+
+#####  Python menus
+
+[[python]]  # name must match folder name on /courses/
+  name = "Python" 
+  weight = 10
+  url = "/courses/python/"
+  identifier = "python"
+
+
+[[python]]
+  name = "Get Python"
+  weight = 20
+  identifier = "python_get"
+
+
+[[python]]
+  name = "Python Language"
+  weight = 30
+  identifier = "python_language"
+
+
+[[python]]
+  name = "Jupyter"
+  weight = 40
+  identifier = "python_jupyter"
+
+
+[[python]]
+  name = "Matplotlib"
+  weight = 50
+  identifier = "python_matplotlib"
+
+
+[[python]]
+  name = "Data Acquisiton"
+  weight = 60
+  identifier = "python_dacq"
+
+

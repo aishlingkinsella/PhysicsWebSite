@@ -1,46 +1,72 @@
-<p align="center"><a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener"><img src="https://sourcethemes.com/academic/img/logo_200px.png" alt="Academic logo"></a></p>
+# PhysicsWebSite
 
-# Academic Kickstart: The Template for [Academic Website Builder](https://sourcethemes.com/academic/)
+Support web site for Python and Laboratories in Undergraduate Physics
 
-[**Academic**](https://github.com/gcushen/hugo-academic) makes it easy to create a beautiful website for free using Markdown, Jupyter, or RStudio. Customize anything on your site with widgets, themes, and language packs. [Check out the latest demo](https://academic-demo.netlify.app/) of what you'll get in less than 10 minutes, or [view the showcase](https://sourcethemes.com/academic/#expo).
+This is the source for a web site, developed in the [Hugo](https://gohugo.io) web framework using the [Academic](https://themes.gohugo.io/academic/) theme, to provide support and tutorials to undergraduate students in UCD Physics.
 
-**Academic Kickstart** provides a minimal template to kickstart your new website.
+For [online documentation]( https://sourcethemes.com/academic/docs/) for the Academic theme.
 
-- 👉 [**Get Started**](#install)
-- 📚 [View the **documentation**](https://sourcethemes.com/academic/docs/)
-- 💬 [Chat with the **Academic community**](https://spectrum.chat/academic) or [**Hugo community**](https://discourse.gohugo.io)
-- 🐦 Twitter: [@source_themes](https://twitter.com/source_themes) [@GeorgeCushen](https://twitter.com/GeorgeCushen) [#MadeWithAcademic](https://twitter.com/search?q=%23MadeWithAcademic&src=typd)
-- 💡 [Request a **feature** or report a **bug**](https://github.com/gcushen/hugo-academic/issues)
-- ⬆️ **Updating?** View the [Update Guide](https://sourcethemes.com/academic/docs/update/) and [Release Notes](https://sourcethemes.com/academic/updates/)
-- :heart: **Support development** of Academic:
-  - ☕️ [**Donate a coffee**](https://paypal.me/cushen)
-  - 💵 [Become a backer on **Patreon** and **unlock rewards**](https://www.patreon.com/cushen)
-  - 🖼️ [Decorate your laptop or journal with an Academic **sticker**](https://www.redbubble.com/people/neutreno/works/34387919-academic)
-  - 👕 [Wear the **T-shirt**](https://academic.threadless.com/)
-  - :woman_technologist: [**Contribute**](https://sourcethemes.com/academic/docs/contribute/)
+## Instructions for Contributors:
 
-[![Screenshot](https://raw.githubusercontent.com/gcushen/hugo-academic/master/academic.png)](https://github.com/gcushen/hugo-academic/)
+The Python documentation is in content/courses/python
 
-## Install
+The Data Analysis Content is in content/courses/data-analysis
 
-You can choose from one of the following four methods to install:
+## Become a contributor:
 
-* [**one-click install using your web browser (recommended)**](https://sourcethemes.com/academic/docs/install/#install-with-web-browser)
-* [install on your computer using **Git** with the Command Prompt/Terminal app](https://sourcethemes.com/academic/docs/install/#install-with-git)
-* [install on your computer by downloading the **ZIP files**](https://sourcethemes.com/academic/docs/install/#install-with-zip)
-* [install on your computer with **RStudio**](https://sourcethemes.com/academic/docs/install/#install-with-rstudio)
+First fork it on github and then clone the fork to your own machine.
+Then cd into the website folder and run:
+` git submodule update --init --recursive` 
 
-Then [personalize your new site](https://sourcethemes.com/academic/docs/get-started/).
+Whn you have made changes in your own version you can then to a pull request
+for the changes to be reviewed and incorporated into the main version.
 
-## Ecosystem
+## Deployment:
+TBD
 
-* **[Academic Admin](https://github.com/sourcethemes/academic-admin):** An admin tool to import publications from BibTeX or import assets for an offline site
-* **[Academic Scripts](https://github.com/sourcethemes/academic-scripts):** Scripts to help migrate content to new versions of Academic
 
-## License
 
-Copyright 2017-present [George Cushen](https://georgecushen.com).
+### Menu system
 
-Released under the [MIT](https://github.com/sourcethemes/academic-kickstart/blob/master/LICENSE.md) license.
+The file 'config/default/menus.toml' is where links that appear
+in the top menu and menus that appear on the left-hand
+side of the page for courses (page type 'doc') are defined and
+ordered (by the weight parameter). Note thay for the courses
+the menu mist match the name of the course folder.
 
-[![Analytics](https://ga-beacon.appspot.com/UA-78646709-2/academic-kickstart/readme?pixel)](https://github.com/igrigorik/ga-beacon)
+
+### Including images
+
+In Hugo/Academic images can be place in (subfolders) of /statc/img
+and included using, e.g.:
+{{< figure library="true" src="python/anaconda.png" title="" lightbox="true" width="200">}}.
+Any .md file can access images in this static/img folders in this way.
+
+Images may also be included in the same folder as the .md files but it appears
+only _index.md (or index.md) can access the images, e.g. 
+{{< figure src="binary.png" title="Figure: Binary Numbers" lightbox="true" width="500" >}}
+
+So, if a page has lots of images the suggestion is to make a page bundle in
+a folder (the name of the folder will serve as the page name) with all of the images
+and use index.html
+
+
+### Linking to other .md pages
+
+There appear to be relative and absolute links:
+
+e.g. [front matter]({{< relref "front-matter.md" >}})
+
+For information on how to use in Jupyter [see here]({{< ref "courses/python/jupyter/index.md#matplotlib" >}})
+
+
+### Weights:
+
+It can be a pain to keep track of weights as the amount of content grows!
+There appear to be three separate weights applied to 'doc' pages and menus:
+1. The weights in the config/_default/menus.toml determine the orders of the menus
+2. In a doc page there are two more:
+   1. The weight inside the "menu:" section of the front matter determines the order of appearance within that menu item
+   2. The weight in the front matter section of the page determines overall wiight for automatically linking to the "Previous" and "Next" items.
+
+

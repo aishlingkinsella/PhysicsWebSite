@@ -1,6 +1,13 @@
 # IDEs
 .idea/
 
+# Mac OS Finder:
+.DS_Store
+
+
+# emacs backup files:
+*~
+
 # Hugo
 resources/
 public/
