@@ -10,8 +10,8 @@ type:   docs  # Do not modify.
 
 
 Data analysis tutorials will appear here with lots of equations,
-both inline like $\int x dx$ and on their own lines:
+both inline like $\int x^2 dx$ and on their own lines:
 
-$$\int x^2 dx$$
+$$\int x^3 dx$$
 
 
